@@ -16,10 +16,11 @@ class PricingTest {
 
 	@Test
 	void test() {
-		PriceListResponse priceList = new PriceListResponse(400, 800, 1200, 500, 1100);
-		Response expectedResponse = new Response(1, 4000, priceList, "Success");
+		PriceListResponse priceList = new PriceListResponse(484, 968, 1452, 605, 1331);
+		Response expectedResponse = new Response(1, 4840, priceList, "Success", 2018);
 		Request request = new Request(1, new ChainAssembly(2), new Frames("carbonFiber"),
-				new HandleBarBrake("steel", "round", "disc"), new Seating("leather"), new Wheels(40, "steel", true));
+				new HandleBarBrake("steel", "round", "disc"), new Seating("leather"), new Wheels(40, "steel", true),
+				2018);
 
 		Pricing pricing = new Pricing(request, null);
 		Response actualResponse = pricing.pricingEngine();
